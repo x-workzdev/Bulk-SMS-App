@@ -19,7 +19,7 @@
 
 	<appender name="FILE-ENGINE"
 		class="ch.qos.logback.core.FileAppender">
-		<file>../logs/SMSLogfile${bySecond}.log</file>
+		<file>/opt/tomcat1/logs/SMSLogfile${bySecond}.log</file>
 		<encoder>
 			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n</pattern>
 		</encoder>
@@ -47,13 +47,11 @@
   </appender> 
 	
 	<logger name="com.xworkz.ombn" level="ALL" additivity="false">
-		<appender-ref ref="FILE-ENGINE" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILEROLLER" />
 	</logger>
 
 	<root level="ALL">
-		<appender-ref ref="FILE-ENGINE" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILEROLLER" />
 	</root>
