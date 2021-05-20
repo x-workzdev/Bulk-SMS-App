@@ -16,25 +16,11 @@
 			<onMismatch>DENY</onMismatch>
 		</filter>
 	</appender>
-
-	<appender name="FILE-ENGINE"
-		class="ch.qos.logback.core.FileAppender">
-		<file>/opt/tomcat1/logs/SMSLogfile${bySecond}.log</file>
-		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n</pattern>
-		</encoder>
-		<filter class="ch.qos.logback.classic.filter.LevelFilter">
-			<level>INFO</level>
-			<onMatch>ACCEPT</onMatch>
-			<onMismatch>ACCEPT</onMismatch>
-		</filter>
-	</appender>
-	
 	
     <appender name="FILEROLLER" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- Monthly rollover -->
-      <fileNamePattern>../logs/%d{yyyy/MM}/SMS-App-Logfile.log</fileNamePattern>
+      <fileNamePattern>../logs/SMS-App-Logs/%d{yyyy/MM}/SMS-App-Logfile.log</fileNamePattern>
 
       <!-- keep 6 month's worth of history capped at 3GB total size -->
       <maxHistory>6</maxHistory>
